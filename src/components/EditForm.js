@@ -38,25 +38,21 @@ class RecipeBox extends Component {
     return (
       <div className="container" style={styles.container}>
         <InputGroup style={styles.input}>
-          <Input placeholder={this.props.recipe.name}
+          <Input value={this.state.recipe.name} placeholder={this.props.recipe.name}
             onChange={(e) => this.handleEdit('name', `${e.target.value}`)}
           />
         </InputGroup>
-        <br />
+        <br /> 
         <InputGroup style={styles.input}>
-          <Input placeholder={this.props.recipe.ingredients}
+          <Input value={this.state.recipe.ingredients} placeholder={this.props.recipe.ingredients}
             onChange={(e) => this.handleEdit('ingredients', `${e.target.value}`)}
           />
         </InputGroup>
 
         <div className="row" style={styles.buttonRow}>
-          <button className=" col btn btn-sm"
+          <button className=" col-3 btn btn-sm"
             onClick={() => this.sendUpdate(this.state.recipe, index)}>
             done
-          </button>
-          <button className=" col btn btn-sm"
-            onClick={this.props.cancel}>
-            cancel
           </button>
         </div>
       </div>
@@ -71,6 +67,7 @@ const styles = {
     // border: '1px solid blue'
   },
   input: {
+    width: '100%',
     margin: 0
   },
   name: {
@@ -80,8 +77,8 @@ const styles = {
     fontSize: 18,
   },
   buttonRow: {
-    marginTop: 20,
-    width: '60%'
+    marginLeft: 0,
+    marginTop: 10,
   }
 
 }

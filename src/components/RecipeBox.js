@@ -5,7 +5,7 @@ import EditForm from './EditForm';
 
 // modules
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import ListedRecipe from './Recipe';
+import ListedRecipe from './ListedRecipe';
 
 class RecipeBox extends Component {
 

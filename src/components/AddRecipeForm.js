@@ -15,15 +15,17 @@ class RecipeBox extends Component {
   }
 
   render() {
+    // make placeholder text red if nothing was typed
+
     return (
       <div className="container" style={styles.container}>
-        <InputGroup>
-          <Input placeholder="recipe name"
+        <InputGroup style={styles.input}>
+          <Input style={styles.input} placeholder="recipe name"
             onChange={(e) => this.props.handleChange('name', `${e.target.value}`)}
           />
         </InputGroup>
         <br />
-        <InputGroup>
+        <InputGroup style={styles.input}>
           <Input placeholder="ingredients" 
             onChange={(e) => this.props.handleChange('ingredients', `${e.target.value}`)}
           />
@@ -35,8 +37,17 @@ class RecipeBox extends Component {
 
 const styles = {
   container: {
-    marginBottom: 30,
     width: '100%',
+    marginBottom: 30,
+  },
+  input: {
+    width: '100%',
+  },
+  normalText: {
+    color: 'grey'
+  },
+  warnText: {
+    color: 'red'
   }
 }
 
